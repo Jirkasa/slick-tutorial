@@ -1,0 +1,30 @@
+{
+  "name": "slick-tutorial",
+  "version": "1.0.0",
+  "description": "Website about slick library",
+  "main": "index.js",
+  "scripts": {
+    "compile:less": "lessc ./less/main.less ./media/css/style.css",
+    "nodemon:compile:less": "nodemon -e less -x \"npm run compile:less\"",
+    "concat:css": "concat -o media/css/style.concat.css media/css/icofont.min.css media/css/style.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' media/css/style.concat.css -o media/css/style.prefix.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jirkasa/slick-tutorial.git"
+  },
+  "author": "Jiří Satora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jirkasa/slick-tutorial/issues"
+  },
+  "homepage": "https://github.com/Jirkasa/slick-tutorial#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.3.6",
+    "concat": "^1.0.3",
+    "less": "^4.1.1",
+    "nodemon": "^2.0.13",
+    "postcss": "^8.3.8",
+    "postcss-cli": "^9.0.1"
+  }
+}
