@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes maximum-scale=2.2 minimum-scale=1.0">
+
+    <link rel="stylesheet" href="../media/css/style.css">
+
+    <title>Slick Tutoriál - Šipky a navigace</title>
+
+    <script src="../media/js/libraries/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header__content">
+                <div class="header__heading">Slick Tutoriál</div>
+                <nav class="header__nav">
+                    <ul>
+                        <li class="header__nav-item"><a href="../">Úvod</a></li>
+                        <li class="header__nav-item header__nav-item--active"><a href="../co-je-to-slick-a-jeho-instalace/">Tutoriál</a></li>
+                        <li class="header__nav-item"><a href="#">Seznam nastavení</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="heading-section">
+            <h1 class="heading-primary">Šipky a navigace</h1>
+        </section>
+        <section class="article">
+            <div class="article__content">
+                <div class="article__left-column">
+                    <div class="article-mark">
+                        <div class="article-mark__number">2.</div>
+                        <div class="article-mark__text">část</div>
+                    </div>
+                </div>
+                <main class="article__middle-column">
+                    <h2 class="heading-secondary u-margin-bottom-small">Šipky a navigace</h2>
+                    <hr class="u-margin-bottom-medium">
+                    <p class="paragraph u-margin-bottom-medium">V této části si ukážeme všechna nastavení, která se týkají šipek a navigace slideru. Také si ukážeme jak můžeme šipky a navigaci nastylovat.</p>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zobrazení/Skrytí šipek</h3>
+                    <p class="paragraph u-margin-bottom-medium">Slick slidery mají defaultně zapnuté šipky, které se zobrazí aby pomocí nich mohl uživatel posouvat elementy v slideru. Pokud šipky zobrazovat nechceme, tak můžeme nastavit nastavení arrows na hodnotu false, jak ukazuje následující ukázka. Nastavení slideru píšeme jako vlastnosti objektu, který předáváme slick metodě jako parametr.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    arrows: false // šipky pro ovládání slideru se nezobrazí
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Změnění elementu do kterého se umístí šipky</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně se šipky slideru umístí do samotného elementu (slideru), který obsahuje slidy. Pokud chceme změnit kde se šipky zobrazí, můžeme k tomu použít nastavení appendArrows.</p>
+<pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    appendArrows: '.gallery' // šipky se umístí do elementu s třídou gallery
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Určení elementu, který představuje šipku</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud chceme, tak nemusíme nechat slick vytvořit pro slider šipky. Pokud chceme můžeme si je vytvořit sami a potom jen nastavit, že je má Slick použít jako šipky. Pro nastavení elementu jako šipku zpět použijeme nastavení prevArrow. Pro nastavení elementu jako šipku dopředu použijeme nastavení nextArrow.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    prevArrow: '#sipka-zpet', // šipkou zpět bude element s id sipka-zpet
+    nextArrow: '#sipka-dopredu' // šipkou dopředu bude element s id sipka-dopredu
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Stylování šipek</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud jsme si spolu se Slickem do našeho projektu nepřidali i jeho styly, tak se nám šipky slideru nezobrazí vůbec pěkně. Vlastně to ani nejsou šipky, ale tlačítka. Tato tlačítka ale můžeme nastylovat a udělat z nich svoje vlastní šipky. Existuje více cest, jak to udělat a záleží na tom kde se šipky zobrazili, nebo jaký element jsme nastavili jako šipku. Pokud jsme jako šipku nastavili nějaký svůj vlastní element, tak je stylování samozřejmě jednoduché. Pokud jsme ale nechali Slick ať vytvoří šipky sám, tak musíme zjistit co máme vlastně stylovat pomocí vývojářský nástrojů. Následující ukázka ukazuje, jak bychom mohli například takovou šipku nastylovat. Pro vytvoření tvaru šipky jsou zde použity pseudo elementy before a after.</p>
+<pre class="code-box u-margin-bottom-small"><code>#sipka-dopredu {
+    width: 5rem;
+    height: 5rem;
+    
+    background-color: #44c0c2;
+    border-radius: .4rem;
+    cursor: pointer;
+
+    position: relative;
+}
+
+/* stylování dolní i horní části šipky */
+#sipka-dopredu::before, #sipka-dopredu::after {
+    content: ""; /* zobrazení pseudo elementu */
+
+    width: 50%;
+    height: .4rem;
+
+    background-color: #fff;
+    border-radius: .2rem;
+
+    position: absolute;
+    right: 1.2rem;
+    transform-origin: right;
+
+    transition: all .2s;
+}
+
+#sipka-dopredu::before { /* dolní část šipky */
+    top: 50%;
+    transform: translateY(-.3rem) rotate(-45deg);
+}
+#sipka-dopredu::after { /* horní část šipky */
+    bottom: 50%;
+    transform: translateY(.3rem) rotate(45deg);
+}
+
+/* při najetí myši na šipku */
+#sipka-dopredu:hover::before {
+    transform: translateY(-.3rem) rotate(-38deg);
+}
+#sipka-dopredu:hover::after {
+    transform: translateY(.3rem) rotate(38deg);
+}</code></pre>
+                    <div class="part2-arrow u-margin-bottom-medium"></div>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zobrazení/Skrytí navigace</h3>
+                    <p class="paragraph u-margin-bottom-medium">U slideru si můžeme nechat zobrazit také navigaci, pomocí které se bude uživatel moci přepínat na konkrétní slide, který si vybere. Zobrazíme ji nastavením vlastnosti dots na hodnotu true.</p>
+<pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    dots: true // zobrazení navigace
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Změnění elementu do kterého se umístí navigace</h3>
+                    <p class="paragraph u-margin-bottom-medium">Stejně jako u šipek, i u navigace si můžeme určit do kterého elementu se navigace slideru umístí. Použijeme k tomu nastavení appendDots.</p>
+<pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    appendDots: '.gallery' // navigace se umístí do elementu s třídou gallery
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Změnění jména třídy pro navigaci slideru</h3>
+                    <p class="paragraph u-margin-bottom-medium">Slick defaultně navigaci slideru nastavuje jako třídu "slider-dots". Pokud bychom chtěli navigaci nastavit jinou třídu, tak k tomu použijeme nastavení dotsClass. Hodí se to když na stránce máme třeba více sliderů, ale u každého slideru chceme navigaci nastylovat trochu jinak.</p>
+<pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    dotsClass: 'moje-navigace' // navigaci se přiřadí třída moje-navigace
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Stylování navigace</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud jsme si do našeho projektu nepřidali společně se Slickem i jeho styly, tak se nám navigace stejně jako šipky nezobrazí vůbec pěkně. Takže ji budeme muset nastylovat. Musíme ale vědět co přesně máme stylovat, takže musíme použít vývojářské nástroje a podívat se z čeho se navigace slideru skládá. Jedná se o neuspořádaný seznam s tlačítky. Následující ukázka ukazuje, jak bychom mohli navigaci například nastylovat.</p>
+<pre class="code-box u-margin-bottom-small"><code>.moje-navigace li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.moje-navigace button {
+    font-size: 0; /* nezobrazíme čísla tlačítek */
+
+    width: 2rem;
+    height: 2rem;
+
+    border: none;
+    border-radius: 50%;
+    background-color: @colors[almost-white-2];
+
+    cursor: pointer;
+
+}
+.moje-navigace button:hover {
+    background-color: @colors[primary];
+}</code></pre>
+                    <ul class="part2-navigation">
+                        <li>
+                            <button>1</button>
+                        </li>
+                        <li>
+                            <button>2</button>
+                        </li>
+                        <li>
+                            <button>3</button>
+                        </li>
+                        <li>
+                            <button>4</button>
+                        </li>
+                        <li>
+                            <button>5</button>
+                        </li>
+                    </ul>
+                </main>
+                <div class="article__right-column">
+                    <div class="u-pos-sticky">
+                        <h3 class="heading-tertiary u-margin-bottom-medium">Části Tutoriálu</h3>
+                        <nav class="navigation">
+                            <ul>
+                                <li class="navigation__item"><a href="../co-je-to-slick-a-jeho-instalace/"><span class="navigation__item-number">1. </span> Co je to Slick a jeho instalace</a></li>
+                                <li class="navigation__item navigation__item--active"><a href="../sipky-a-navigace/"><span class="navigation__item-number">2. </span> Šipky a navigace</a></li>
+                                <li class="navigation__item"><a href="#"><span class="navigation__item-number">3. </span> Nastavení slidů</a></li>
+                                <li class="navigation__item"><a href="#"><span class="navigation__item-number">4. </span> Nastavení posouvání slidů</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            Copyright &copy; by Jiří Satora
+        </footer>
+    </div>
+
+    <script src="../media/js/libraries/jquery.min.js"></script>
+    <script src="../media/js/libraries/slick.min.js"></script>
+    <script src="../media/js/tutorial/coJeToSlickAJehoInstalace.js"></script>
+</body>
+</html>

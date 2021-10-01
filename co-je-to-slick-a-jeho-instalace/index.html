@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes maximum-scale=2.2 minimum-scale=1.0">
+
+    <link rel="stylesheet" href="../media/css/style.css">
+
+    <title>Slick Tutoriál - Co je to Slick a jeho instalace</title>
+
+    <script src="../media/js/libraries/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header__content">
+                <div class="header__heading">Slick Tutoriál</div>
+                <nav class="header__nav">
+                    <ul>
+                        <li class="header__nav-item"><a href="../">Úvod</a></li>
+                        <li class="header__nav-item header__nav-item--active"><a href="../co-je-to-slick-a-jeho-instalace/">Tutoriál</a></li>
+                        <li class="header__nav-item"><a href="#">Seznam nastavení</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="heading-section">
+            <h1 class="heading-primary">Co je to Slick a jeho instalace</h1>
+        </section>
+        <section class="article">
+            <div class="article__content">
+                <div class="article__left-column">
+                    <div class="article-mark">
+                        <div class="article-mark__number">1.</div>
+                        <div class="article-mark__text">část</div>
+                    </div>
+                </div>
+                <main class="article__middle-column">
+                    <h2 class="heading-secondary u-margin-bottom-small">Co je to Slick a jeho instalace</h2>
+                    <hr class="u-margin-bottom-medium">
+                    <div class="part1-introduction-slider">
+                        <div class="part1-introduction-slider__arrow part1-introduction-slider__arrow--left"></div>
+                        <div class="part1-introduction-slider__arrow part1-introduction-slider__arrow--right"></div>
+                        <div class="part1-introduction-slider__container">
+                            <img src="../media/img/tutorial/co-je-to-slick/IntroSlider-image1.jpg">
+                            <img src="../media/img/tutorial/co-je-to-slick/IntroSlider-image2.jpg">
+                            <img src="../media/img/tutorial/co-je-to-slick/IntroSlider-image3.jpg">
+                        </div>
+                    </div>
+                    <p class="paragraph u-margin-bottom-medium">Vítejte v tutoriálu o vytváření sliderů pomocí Slicku. Jedná se o JQuery plugin, který nám umožňuje na našich webových stránkách jednoduše vytvářet různé slidery. Tyto slidery jsou plně přizpůsobitelné a můžeme si je nastavit a nastylovat tak jak potřebujeme.</p>
+                    <p class="paragraph u-margin-bottom-medium">Slick poskytuje spoustu funkcí. Umožňuje nám vytvářet responzivní slidery, nekonečné slidery, zapnout automatické posouvání, zobrazit navigaci, šipky a mnoho dalšího. Slick nám toho umožňuje nastavit opravdu hodně.</p>
+                    <p class="paragraph u-clear-float u-margin-bottom-medium">Pokud chcete Slick začít používat, tak se můžete podívat na jeho <a class="anchor" href="https://kenwheeler.github.io/slick/" target="_blank">oficiální stránky</a>, kde se můžete podívat na pár příkladů s ukázkami kódu a přehledem všech nastavitelných vlastností. Určitě podle toho pochopíte jak Slick začít používat, ale možná pro vás na začátku bude trochu problém vyznat se ve všech těch nastaveních, které máte k dispozici. Proto jsem vytvořit tento tutoriál, ve kterém vás Slickem postupně provedu. Snažil jsem se jednotlivá nastavení seskupit logicky dohromady, abyste tento tutoriál mohli později také použít když nebudete přesně vědět jak něco nastavit nebo udělat.</p>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Instalace</h3>
+                    <p class="paragraph u-margin-bottom-medium">Abychom mohli Slick začít používat, tak si jej nejdříve musíme stáhnout nebo použít CDN. Slick můžete <a href="https://kenwheeler.github.io/slick/#go-get-it" target="_blank" class="anchor">stáhnout odsud</a>. Najdete tam také CDN, pokud si jej nechcete stahovat. Pokud si Slick, stáhnete, tak dostanete zazipovaný soubor se spoustou souborů. Ale jediný soubor který potřebujete je slick.min.js. Měl by tam být také soubor s CSS styly, ale ten nepotřebujeme, protože si slidery budeme stylovat sami. A protože Slick je JQuery plugin, tak si budeme muset stáhnout také JQuery. Stáhnout jej můžete <a href="https://jquery.com/download/" target="_blank" class="anchor">odsud</a>. Pokud ale raději chcete použít CDN, podívejte se <a href="https://code.jquery.com/" target="_blank" class="anchor">zde</a>. Až máme Slick a JQuery stažené, tak si je napojíme na naše webové stránky. Takže před konec body elementu přidáme script tagy s odkazem na JavaScript soubory Slicku a JQuery.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>&lt;script src="./js/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="./js/slick.min.js"&gt;&lt;/script&gt;</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">První slider</h3>
+                    <p class="paragraph u-margin-bottom-medium">Po napojení Slicku a JQuery na naše webové stránky můžeme Slick začít používat. Pokud chceme vytvořit nějaký slider, tak si jej nejdříve musíme napsat v HTML. Vytvoříme si nějaký element, který bude obsahovat všechny slidy, které se ve slideru budou zobrazovat. Poté pomocí JQuery jednoduše tento element vybereme a zavoláme metodu slick. Pokud metodu slick zavoláme bez žádného parametru, tak se nám vytvoří slider s defaultními nastaveními. Nebude vypadat hezky, ale na to jak jej nastylovat se podíváme v další části.</p>
+                    <pre class="code-box"><code>&lt;div class="muj-slider"&gt;
+    &lt;img src="./img/Image1.jpg"&gt;
+    &lt;img src="./img/Image2.jpg"&gt;
+    &lt;img src="./img/Image3.jpg"&gt;
+&lt;/div&gt;
+
+&lt;script src="./js/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="./js/slick.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $('.muj-slider').slick();
+&lt;/script&gt;</code></pre>
+
+                </main>
+                <div class="article__right-column">
+                    <div class="u-pos-sticky">
+                        <h3 class="heading-tertiary u-margin-bottom-medium">Části Tutoriálu</h3>
+                        <nav class="navigation">
+                            <ul>
+                                <li class="navigation__item navigation__item--active"><a href="../co-je-to-slick-a-jeho-instalace/"><span class="navigation__item-number">1. </span> Co je to Slick a jeho instalace</a></li>
+                                <li class="navigation__item"><a href="../sipky-a-navigace/"><span class="navigation__item-number">2. </span> Šipky a navigace</a></li>
+                                <li class="navigation__item"><a href="#"><span class="navigation__item-number">3. </span> Nastavení slidů</a></li>
+                                <li class="navigation__item"><a href="#"><span class="navigation__item-number">4. </span> Nastavení posouvání slidů</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            Copyright &copy; by Jiří Satora
+        </footer>
+    </div>
+
+    <script src="../media/js/libraries/jquery.min.js"></script>
+    <script src="../media/js/libraries/slick.min.js"></script>
+    <script src="../media/js/tutorial/coJeToSlickAJehoInstalace.js"></script>
+</body>
+</html>

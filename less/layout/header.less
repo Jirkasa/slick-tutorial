@@ -1,0 +1,71 @@
+.header {
+    background-color: @colors[white];
+
+    height: 10rem;
+
+    padding: 0 2rem;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        max-width: @grid-width;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__heading {
+        padding: 2rem 0;
+
+        font-family: 'Lobster', cursive;
+        font-size: 4.3rem;
+
+        color: @colors[primary];
+    }
+
+    &__nav {
+        height: 100%;
+
+        ul {
+            height: 100%;
+            list-style: none;
+            font-size: 1.5rem;
+
+            display: flex;
+        }
+    }
+
+    &__nav-item {
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        a {
+            &:link, &:visited {
+                display: inline-block;
+
+                height: 100%;
+                line-height: 9.7rem; // center text vertically
+                color: @colors[text];
+                text-decoration: none;
+
+                padding: 0 2rem;
+
+                border-bottom: .3rem solid transparent;
+            }
+
+            &:hover {
+                background-color: @colors[almost-white];
+                border-color: @colors[primary-2];
+            }
+        }
+
+        &--active a {
+            &:link, &:visited {
+                background-color: @colors[almost-white];
+                border-color: @colors[primary-2];
+            }
+        }
+    }
+}

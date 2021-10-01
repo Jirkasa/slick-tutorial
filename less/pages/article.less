@@ -1,0 +1,27 @@
+.article {
+    padding: 10rem 2rem;
+
+    background-color: @colors[white];
+
+    &__content {
+        width: 100%;
+        max-width: @grid-width;
+        margin: 0 auto;
+
+        display: flex;
+    }
+
+    &__left-column {
+        width: 10rem;
+    }
+
+    &__middle-column {
+        flex: 1;
+        overflow-x: auto;
+    }
+
+    &__right-column {
+        padding-left: 7rem;
+        width: 34rem;
+    }
+}
