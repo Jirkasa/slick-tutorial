@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes maximum-scale=2.2 minimum-scale=1.0">
+
+    <link rel="stylesheet" href="../media/css/style.css">
+
+    <title>Slick Tutoriál - Responzivita</title>
+
+    <script src="../media/js/libraries/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header__content">
+                <div class="header__heading">Slick Tutoriál</div>
+                <nav class="header__nav">
+                    <ul>
+                        <li class="header__nav-item"><a href="../">Úvod</a></li>
+                        <li class="header__nav-item header__nav-item--active"><a href="../co-je-to-slick-a-jeho-instalace/">Tutoriál</a></li>
+                        <li class="header__nav-item"><a href="#">Seznam nastavení</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="heading-section">
+            <h1 class="heading-primary">Responzivita</h1>
+        </section>
+        <section class="article">
+            <div class="article__content">
+                <div class="article__left-column">
+                    <div class="article-mark">
+                        <div class="article-mark__number">6.</div>
+                        <div class="article-mark__text">část</div>
+                    </div>
+                </div>
+                <main class="article__middle-column">
+                    <h2 class="heading-secondary u-margin-bottom-small">Responzivita</h2>
+                    <hr class="u-margin-bottom-medium">
+                    <p class="paragraph u-margin-bottom-medium">U Slick sliderů můžeme jednoduše provádět také responzivitu. V této části se dozvíte jak.</p>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Měnění nastavení slideru pro různé šířky obrazovky</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud chceme měnit nastavení slideru v závislosti na šířce obrazovky, tak můžeme využít nastavení responsive. Tomuto nastavení předáváme pole objektů. Každý objekt v poli obsahuje šířku a nastavení, která se mají aplikovat. Defaultně Slick pro responzivitu používá desktop-first strategii, takže se vždy aplikuje nejmenší možná šířka, která je větší nebo se rovná šířce obrazovky. Pokud bychom chtěli aby Slick používal mobile-first strategii, tak bychom to museli přepnout pomocí nastavení mobileFirst.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    responsive: [ // vytvoření responzivity
+        {
+            breakpoint: 1024, // šířka
+            settings: { // nastavení, která se aplikují
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Přepnutí na mobile-first strategii</h3>
+                    <p class="paragraph u-margin-bottom-medium">Slick defaultně používá pro responzivitu desktop-first strategii, takže se vždy aplikuje nejmenší možná šířka, která je větší nebo se rovná šířce obrazovky. Pokud ale chceme použít mobile-first strategii, tak musíme nastavit nastavení mobileFirst na hodnotu true. Potom se tedy vždy aplikuje největší možná šířka, která je menší nebo se rovná šířce obrazovky.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    mobileFirst: true, // přepnutí na mobile-first strategii
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Změnění podle čeho bude Slick brát šířku pro responzivitu</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně Slick bere šířku kterou používá pro určení, která nastavení se aplikují podle šířky obrazovky, nebo přesněji podle šířky okna. Pokud ale chceme, tak můžeme specifikovat, že se šířka bude brát podle šířky slideru namísto šířky okna. Slouží k tomu nastavení respondTo. Tomuto nastavení nastavujeme jednu z těchto tří hodnot: 'window' - okno, 'slider' nebo 'min' - menší z předešlích dvou.</p>
+                    <pre class="code-box"><code>$('.muj-slider').slick({
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    respondTo: 'slider', // šířka pro responzivitu se bude brát podle šířky slideru
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+});</code></pre>
+                </main>
+                <div class="article__right-column">
+                    <div class="u-pos-sticky">
+                        <h3 class="heading-tertiary u-margin-bottom-medium">Části Tutoriálu</h3>
+                        <nav class="navigation">
+                            <ul>
+                                <li class="navigation__item"><a href="../co-je-to-slick-a-jeho-instalace/"><span class="navigation__item-number">1. </span> Co je to Slick a jeho instalace</a></li>
+                                <li class="navigation__item"><a href="../sipky-a-navigace/"><span class="navigation__item-number">2. </span> Šipky a navigace</a></li>
+                                <li class="navigation__item"><a href="../nastaveni-slidu/"><span class="navigation__item-number">3. </span> Nastavení slidů</a></li>
+                                <li class="navigation__item"><a href="../nastaveni-posouvani-slidu/"><span class="navigation__item-number">4. </span> Nastavení posouvání slidů</a></li>
+                                <li class="navigation__item"><a href="../par-dalsich-nastaveni/"><span class="navigation__item-number">5. </span> Pár dalších nastavení</a></li>
+                                <li class="navigation__item navigation__item--active"><a href="../responzivita/"><span class="navigation__item-number">6. </span> Responzivita</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            Copyright &copy; by Jiří Satora
+        </footer>
+    </div>
+
+    <script src="../media/js/libraries/jquery.min.js"></script>
+    <script src="../media/js/libraries/slick.min.js"></script>
+</body>
+</html>
