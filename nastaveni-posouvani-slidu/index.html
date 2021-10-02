@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes maximum-scale=2.2 minimum-scale=1.0">
+
+    <link rel="stylesheet" href="../media/css/style.css">
+
+    <title>Slick Tutoriál - Nastavení posouvání slidů</title>
+
+    <script src="../media/js/libraries/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header__content">
+                <div class="header__heading">Slick Tutoriál</div>
+                <nav class="header__nav">
+                    <ul>
+                        <li class="header__nav-item"><a href="../">Úvod</a></li>
+                        <li class="header__nav-item header__nav-item--active"><a href="../co-je-to-slick-a-jeho-instalace/">Tutoriál</a></li>
+                        <li class="header__nav-item"><a href="#">Seznam nastavení</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="heading-section">
+            <h1 class="heading-primary">Nastavení posouvání slidů</h1>
+        </section>
+        <section class="article">
+            <div class="article__content">
+                <div class="article__left-column">
+                    <div class="article-mark">
+                        <div class="article-mark__number">4.</div>
+                        <div class="article-mark__text">část</div>
+                    </div>
+                </div>
+                <main class="article__middle-column">
+                    <h2 class="heading-secondary u-margin-bottom-small">Nastavení posouvání slidů</h2>
+                    <hr class="u-margin-bottom-medium">
+                    <p class="paragraph u-margin-bottom-medium">V této části si ukážeme nastavení týkající se posouvání slidů ve slideru.</p>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Změnění efektu při pohybu slidů na prolnutí</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně se slidy ve slideru při přepínání slidu posouvají zprava doleva. Pokud ale chceme, tak si tento efekt můžeme přepnout na prolnutí. Uděláme to nastavením vlastnosti fade na hodnotu true.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    fade: true // namísto posouvání slidů zprava doleva se slidy budou prolínat
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí/Vypnutí nekonečného posouvání slidů</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně můžeme ve slideru slidy posouvat do nekonečna. Neexistuje žádná hranice kde slidy končí, namísto toho se posouvají stále od začátku nebo od konce když dojedeme na začátek nebo na konec slideru. Pokud tuto vlastnost chceme vypnout abychom neměli nekonečný slider, tak nastavíme vlastnost infinite na hodnotu false.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    infinite: false // slider nebude nekonečný
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí/Vypnutí automatického posouvání</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud chceme nastavit aby se slidy ve slideru automaticky posouvali, tak nastavíme vlastnost autoplay na hodnotu true.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    autoplay: true // slidy se budou automaticky posouvat
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Nastavení rychlosti automatického posouvání</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud chceme nastavit čas, který musí uběhnout mezi dvěma slidy při automatickém posouvání, tak k tomu použijeme nastavení autoplaySpeed. Tomuto nastavení nastavujeme jako hodnotu číslo, které představuje milisekundy. Defaultní hodnota nastavení autoplaySpeed je 3000 milisekund.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    autoplay: true,
+    autoplaySpeed: 5000 // automatické posunutí se provede po každých pěti sekundách
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí/Vypnutí pozastavení automatického posouvání při najetí myši na slider</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud máme zapnuté automatické posouvání a najedeme myší na slider, tak se automatické posouvání pozastaví. Pokud chceme tuto vlastnost vypnout, tak nastavíme nastavení pauseOnHover na hodnotu false.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    autoplay: true,
+    pauseOnHover: false // při najetí myši na slider se automatické posouvání nepozastaví
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí/Vypnutí pozastavení automatického posouvání při najetí myši na navigaci slideru</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud chceme při najetí myši na navigaci slideru pozastavit automatické posouvání, tak nastavíme nastavení pauseOnDotsHover na hodnotu true.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    dots: true,
+    autoplay: true,
+    pauseOnDotsHover: true // při najetí myši na navigaci se pozastaví automatické posouvání
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí/Vypnutí pozastavení automatického posouvání při focusnutí slideru</h3>
+                    <p class="paragraph u-margin-bottom-medium">Při focusnutí slideru (když na něj třeba klikneme) se defaultně pozastaví automatické posouvání slidů. Pokud tuto vlastnost chceme vypnout, tak nastavíme nastavení pauseOnFocus na hodnotu false.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    autoplay: true,
+    pauseOnFocus: false // při focusnutí slideru se automatické posouvání nepozastaví
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí/Vypnutí posouvání slidů pomocí šipek při focusnutí slideru</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně při focusnutí slideru (když na něj třeba klikneme) můžeme jeho slidy posouvat pomocí šipek na klávesnici. Pokud tuto vlastnost chceme vypnout, tak nastavíme nastavení accessibility na hodnotu false.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    accessibility: false // do slideru se nebudeme moci přepnout a ovládat jej šipkami
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Přenastavení o kolik slidů se bude ve slideru posouvat</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně se slidy ve slideru posouvají o jeden slide. Pokud to chceme změnit, tak to můžeme udělat pomocí nastavení slidesToScroll.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    slidesToScroll: 2 // slidy se budou posouvat o dva slidy
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí/Vypnutí posouvání slidů pomocí myši</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně můžeme slidy ve slideru posouvat pomocí myši. Pokud tuto vlastnost chceme vypnout, tak nastavíme nastavení draggable na hodnotu false. Ještě existuje nastavení swipe, které dělá stejnou věc. Na <a href="https://kenwheeler.github.io/slick/" target="_blank" class="anchor">oficiálních stránkách Slicku</a> jsem ale nenašel jaký je mezi nastavením draggable a swipe rozdíl.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    draggable: false // slidy nebudeme moci posouvat pomocí myši
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí/Vypnutí posunutí na slide na který jsme se myší posunuli nejblíže</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně nám Slick nedovolí posunout se myší o libovolné množství slidů. Umožní nám posunout se jen o tolik slidů kolik máme nastaveno v nastavení slidesToScroll. Pokud ale chceme aby se dalo posunout přesně na slide na který jsme se myší posunuli, tak musíme nastavit nastavení swipeToSlide na hodnotu true.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    swipeToSlide: true // budeme se moci posunout přesně na slide na který jsme se posunuli myší
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Nastavení velikosti odporu krajních stran u konečného slideru</h3>
+                    <p class="paragraph u-margin-bottom-medium">U slideru, který není nekonečný (má nastavení infinite nastaveno na hodnotu false) můžeme nastavit velikost odporu jeho krajních stran při tažení myši. K nastavení odporu krajních stran slideru slouží nastavení edgeFriction. Jeho defaultní hodnota je 0.15.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    inifinite: false,
+    edgeFriction: 0.5 // nastavení odporu krajních stran slideru při jejich přejetí myší
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí/Vypnutí posouvání slidů při pohybování myši</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně při tažení myši po slideru uvidíme jak se slidy pohybují. Pokud ale nechceme aby se slidy při tažení pohybovali a jen se posunuli po ukončení tažení myši, tak nastavíme nastavení touchMove na hodnotu false.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    touchMove: false // neuvidíme jak se slidy při pohybování myši posouvají
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Nastavení vzdálenosti, kterou musíme při posouvání slidů myší přejet abychom se dostali na další slide</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pomocí vlastnosti touchThreshold si můžeme nastavit jakou vzdálenost musíme při posouvání slidů myší přejet abychom se dostali na další slide. Vzdálenost, kterou musíme přejet abychom se dostali na další slide se počítá tímto způsobem: (1/touchThreshold) * šířka slideru. Defaultní hodnota nastavení touchThreshold je 5.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    touchThreshold: 3 // pro posunutí na další slide budeme muset přejet 1/3 šířky slideru
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí vertikálního módu</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud chceme aby se slidy ve slideru nepohybovali horizontálně ale vertikálně, tak můžeme nastavit nastavení vertical na hodnotu true.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    vertical: true // slidy se budou posouvat vertikálně
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Posouvání slidů myší vertikálně namísto horizontálně</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně posouváme slidy myší horizontálně i když jsme třeba zapnuli vertikální mód. Pokud chceme slidy posouvat myší vertikálně namísto horizontálně, tak nastavíme nastavení verticalSwiping na hodnotu true.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    verticalSwiping: true // myší budeme slidy posouvat vertikálně namísto horizontálně
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Změna směru slideru</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud chceme změnit směr slideru na right-to-left, tak můžeme nastavit nastavení rtl na hodnotu true. To nám ale pravděpodobně stačit nebude a budeme muset na slideru v CSS kódu ještě přenastavit vlastnost rtl. Poté ale pravděpodobně budou elementy ve slideru převrácené. Takže pokud tuto vlastnost budete chtít použít, je potřeba si se sliderem a jeho elementy v CSS trochu pohrát.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    rtl: true // změna směru slideru na right-to-left
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Nastavení rychlosti posouvání/prolínání slidů</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultní doba, kterou trvá posunutí/prolnutí slidů je 300 milisekund. Pokud to chceme změnit, tak můžeme přenastavit nastavení speed.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    speed: 1000 // posunutí slidů bude trvat jednu sekundu
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Povolení/Zakázání interakce se sliderem při posouvání/prolínání slidů</h3>
+                    <p class="paragraph u-margin-bottom-medium">Defaultně nemůžeme slider ovládat když se provádí posouvání/prolínání slidů. Pokud chceme povolit abychom mohli slider ovládat i v době posouvání/prolínání slidů, tak musíme nastavit nastavení waitForAnimate na hodnotu false.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    autoplay: true,
+    speed: 2000,
+    waitForAnimate: false // slider budeme moci ovládat i když bude probíhat posouvání slidů
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Zapnutí/Vypnutí používání CSS vlastností</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud z nějakého zvláštního důvodu potřebujeme vypnout používání CSS transition vlastností, tak můžeme nastavit nastavení useCSS na hodnotu false. Pokud potřebujeme vypnout používání CSS transform vlastností, tak můžeme nastavit nastavení useTransform na hodnotu false. Nevím proč byste to chtěli vypínat, ale ty možnosti tu jsou.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
+    useCSS: false, // vypne používání CSS transition vlastností
+    useTransform: false // vypne používání CSS transform vlastností
+});</code></pre>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Nastavení ease funkce pro posouvání/prolínání slidů</h3>
+                    <p class="paragraph u-margin-bottom-medium">Pokud chceme nastavit CSS ease funkci pro posouvání/prolínání slidů, tak ji můžeme nastavit pomocí nastavení cssEase. Defaultní ease funkce je 'linear', ale můžeme nastavit jakoukoliv CSS ease funkci, takže třeba i cubic-bezier. Dále ještě existuje nastavení easing, které umožňuje nastavit JQuery easing metodu (můžeme použít také easing knihovny). Nastavení easing je ale ignorováno pokud jsou k dispozici CSS transitions.</p>
+                    <pre class="code-box"><code>$('.muj-slider').slick({
+    cssEase: 'ease-in' // nastavení CSS ease funkce pro posouvání slidů
+});</code></pre>
+                </main>
+                <div class="article__right-column">
+                    <div class="u-pos-sticky">
+                        <h3 class="heading-tertiary u-margin-bottom-medium">Části Tutoriálu</h3>
+                        <nav class="navigation">
+                            <ul>
+                                <li class="navigation__item"><a href="../co-je-to-slick-a-jeho-instalace/"><span class="navigation__item-number">1. </span> Co je to Slick a jeho instalace</a></li>
+                                <li class="navigation__item"><a href="../sipky-a-navigace/"><span class="navigation__item-number">2. </span> Šipky a navigace</a></li>
+                                <li class="navigation__item"><a href="../nastaveni-slidu/"><span class="navigation__item-number">3. </span> Nastavení slidů</a></li>
+                                <li class="navigation__item navigation__item--active"><a href="../nastaveni-posouvani-slidu/"><span class="navigation__item-number">4. </span> Nastavení posouvání slidů</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            Copyright &copy; by Jiří Satora
+        </footer>
+    </div>
+
+    <script src="../media/js/libraries/jquery.min.js"></script>
+    <script src="../media/js/libraries/slick.min.js"></script>
+    <script src="../media/js/tutorial/coJeToSlickAJehoInstalace.js"></script>
+</body>
+</html>
