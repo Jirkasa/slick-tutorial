@@ -358,6 +358,7 @@ hr {
 .article__middle-column {
   flex: 1;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 .article__right-column {
   padding-left: 7rem;
@@ -489,4 +490,112 @@ hr {
 }
 .part2-navigation button:hover {
   background-color: #44c0c2;
+}
+.part5-asNavFor-example {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+.part5-asNavFor-example__active-photo {
+  width: 100%;
+  height: 25rem;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+.part5-asNavFor-example__active-photo * {
+  height: 100%;
+}
+.part5-asNavFor-example__active-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.part5-asNavFor-example__bottom-part {
+  display: flex;
+  align-items: center;
+}
+.part5-asNavFor-example__nav-slider {
+  height: 7rem;
+  flex: 1;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.part5-asNavFor-example__nav-slider .slick-track {
+  width: 100%;
+}
+.part5-asNavFor-example__nav-slider * {
+  height: 100%;
+}
+.part5-asNavFor-example__nav-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.part5-asNavFor-example__arrow {
+  flex: 0 0 2rem;
+  height: 4rem;
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.part5-asNavFor-example__arrow:focus {
+  outline-color: #44c0c2;
+}
+.part5-asNavFor-example__arrow::before,
+.part5-asNavFor-example__arrow::after {
+  content: "";
+  width: 100%;
+  height: 0.4rem;
+  background-color: #44c0c2;
+  border-radius: 0.2rem;
+  position: absolute;
+  transition: transform 0.2s;
+}
+.part5-asNavFor-example__arrow--left {
+  margin-right: 0.5rem;
+}
+.part5-asNavFor-example__arrow--left::before,
+.part5-asNavFor-example__arrow--left::after {
+  left: 0.3rem;
+  transform-origin: left;
+}
+.part5-asNavFor-example__arrow--left::before {
+  top: 50%;
+  transform: rotate(-50deg);
+}
+.part5-asNavFor-example__arrow--left::after {
+  bottom: 50%;
+  transform: rotate(50deg);
+}
+.part5-asNavFor-example__arrow--left:active::before {
+  transform: rotate(-45deg);
+}
+.part5-asNavFor-example__arrow--left:active::after {
+  transform: rotate(45deg);
+}
+.part5-asNavFor-example__arrow--right {
+  margin-left: 0.5rem;
+}
+.part5-asNavFor-example__arrow--right::before,
+.part5-asNavFor-example__arrow--right::after {
+  right: 0.3rem;
+  transform-origin: right;
+}
+.part5-asNavFor-example__arrow--right::before {
+  top: 50%;
+  transform: rotate(50deg);
+}
+.part5-asNavFor-example__arrow--right::after {
+  bottom: 50%;
+  transform: rotate(-50deg);
+}
+.part5-asNavFor-example__arrow--right:active::before {
+  transform: rotate(45deg);
+}
+.part5-asNavFor-example__arrow--right:active::after {
+  transform: rotate(-45deg);
 }
