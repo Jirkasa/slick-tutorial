@@ -61,6 +61,12 @@ body {
   font-weight: normal;
   color: #484c55;
 }
+.heading-quaternary {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #484c55;
+  line-height: 1.6;
+}
 .paragraph {
   font-size: 1.4rem;
   color: #484c55;

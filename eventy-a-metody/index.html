@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes maximum-scale=2.2 minimum-scale=1.0">
+
+    <link rel="stylesheet" href="../media/css/style.css">
+
+    <title>Slick Tutoriál - Eventy a metody</title>
+
+    <script src="../media/js/libraries/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="header__content">
+                <div class="header__heading">Slick Tutoriál</div>
+                <nav class="header__nav">
+                    <ul>
+                        <li class="header__nav-item"><a href="../">Úvod</a></li>
+                        <li class="header__nav-item header__nav-item--active"><a href="../co-je-to-slick-a-jeho-instalace/">Tutoriál</a></li>
+                        <li class="header__nav-item"><a href="#">Seznam nastavení</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section class="heading-section">
+            <h1 class="heading-primary">Eventy a metody</h1>
+        </section>
+        <section class="article">
+            <div class="article__content">
+                <div class="article__left-column">
+                    <div class="article-mark">
+                        <div class="article-mark__number">7.</div>
+                        <div class="article-mark__text">část</div>
+                    </div>
+                </div>
+                <main class="article__middle-column">
+                    <h2 class="heading-secondary u-margin-bottom-small">Eventy a metody</h2>
+                    <hr class="u-margin-bottom-medium">
+                    <p class="paragraph u-margin-bottom-medium">V této části si ukážeme co to jsou eventy a metody. Občas se to může hodit.</p>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Eventy</h3>
+                    <p class="paragraph u-margin-bottom-medium">Eventy nám umožňují nastavit si funkce, které se spustí po proběhnutí nějaké akce. Můžeme si například nastavit funkci, která se zavolá když se změní slide nebo třeba když uživatel přetáhne myší přes okraj slideru. Funkci, kterou slider zavolá po proběhnutí nějaké akce nastavíme pomocí metody jménem on. Této metodě předáváme typ eventu pro který se bude funkce volat a funkci samotnou.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>// tato funkce se zavolá po přetažení slidů myší
+$('.muj-slider').on('swipe', function(event, slick, smer){
+    console.log(smer);
+});
+
+// tato funkce se zavolá po přejetí okraje slideru
+$('.muj-slider').on('edge', function(event, slick, smer){
+    console.log('uživatel přejel okraj slideru');
+});
+
+// tato funkce se zavolá před posunutím slidu
+$('.muj-slider').on('beforeChange', function(event, slick, aktualniSlide, dalsiSlide){
+    console.log(dalsiSlide);
+});</code></pre>
+                    <p class="paragraph u-margin-bottom-small">Zde je přehled eventů, kterým můžeme naslouchat:</p>
+                    <h4 class="heading-quaternary">afterChange</h4>
+                    <p class="paragraph u-margin-bottom-small">Spouští se po změně slidu. Parametry funkce: slick, aktualniSlide</p>
+                    <h4 class="heading-quaternary">beforeChange</h4>
+                    <p class="paragraph u-margin-bottom-small">Spouští se před změnou slidu. Parametry funkce: slick, aktualniSlide, dalsiSlide</p>
+                    <h4 class="heading-quaternary">breakpoint</h4>
+                    <p class="paragraph u-margin-bottom-small">Spouští se po dosažení breakpointu. Parametry funkce: event, slick, breakpoint</p>
+                    <h4 class="heading-quaternary">destroy</h4>
+                    <p class="paragraph u-margin-bottom-small">Spouští se po zničení nebo unslicknutí slideru. Parametry funkce: event, slick</p>
+                    <h4 class="heading-quaternary">edge</h4>
+                    <p class="paragraph u-margin-bottom-small">Spouští se když uživatel přejede okraj slideru. Parametry funkce: slick, směr</p>
+                    <h4 class="heading-quaternary">init</h4>
+                    <p class="paragraph u-margin-bottom-small">Spouští se po první inicializaci slideru. Parametry funkce: slick</p>
+                    <h4 class="heading-quaternary">reInit</h4>
+                    <p class="paragraph u-margin-bottom-small">Spouští se po kaže reinicializaci slideru. Parametry funkce: slick</p>
+                    <h4 class="heading-quaternary">setPosition</h4>
+                    <p class="paragraph u-margin-bottom-small">Spouští se po změně pozice/velikosti. Parametry funkce: slick</p>
+                    <h4 class="heading-quaternary">swipe</h4>
+                    <p class="paragraph u-margin-bottom-small">Spouští se po posunutí slidů pomocí myši. Parametry funkce: slick, směr</p>
+                    <h4 class="heading-quaternary">lazyLoaded</h4>
+                    <p class="paragraph u-margin-bottom-small">Spouští se po načtení obrázku při zapnutém lazy loadingu. Parametry funkce: event, slick, image, imageSource</p>
+                    <h4 class="heading-quaternary">lazyLoadError</h4>
+                    <p class="paragraph u-margin-bottom-medium">Spouští se pokud při zapnutém lazy loadingu dojde při načítání obrázku k chybě. Parametry funkce: event, slick, image, imageSource</p>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Metody</h3>
+                    <p class="paragraph u-margin-bottom-medium">Metody nám umožňují ovládat slider pomocí kódu. Máme k dispozici metodu pro pozastavení slideru, přesunutí na další slide, nastavení vlastnosti slideru, přidání slidu a mnoho dalších. Metody se volají přes metodu slick, kterou používáme také k tvorbě slideru. Předáváme jí jméno metody a popřípadě i nějaké argumenty.</p>
+                    <pre class="code-box u-margin-bottom-medium"><code>// přidání nového slidu
+$('.muj-slider').slick('slickAdd',"&lt;div&gt;nový slide&lt;/div&gt;");
+
+// získání aktuálního slidu
+const aktualniSlide = $('.muj-slider').slick('slickCurrentSlide');</code></pre>
+                    <p class="paragraph u-margin-bottom-small">Zde je přehled všech metod, které nám Slick poskytuje:</p>
+                    <h3 class="heading-quaternary">slickCurrentSlide</h3>
+                    <p class="paragraph u-margin-bottom-small">Vrací index aktuálního slidu.</p>
+                    <h3 class="heading-quaternary">slickGoTo</h3>
+                    <p class="paragraph u-margin-bottom-small">Přesunutí se na slide podle předaného indexu. Jako parametr předáváme index a popřípadě také boolean hodnotu, která značí že se nemá animovat pokud bude true.</p>
+                    <h3 class="heading-quaternary">slickNext</h3>
+                    <p class="paragraph u-margin-bottom-small">Přesunutí na další slide.</p>
+                    <h3 class="heading-quaternary">slickPrev</h3>
+                    <p class="paragraph u-margin-bottom-small">Přesunutí na předchozí slide.</p>
+                    <h3 class="heading-quaternary">slickPause</h3>
+                    <p class="paragraph u-margin-bottom-small">Pozastaví automatické přehrávání.</p>
+                    <h3 class="heading-quaternary">slickPlay</h3>
+                    <p class="paragraph u-margin-bottom-small">Spustí automatické přehrávání.</p>
+                    <h3 class="heading-quaternary">slickAdd</h3>
+                    <p class="paragraph u-margin-bottom-small">Přidá do slideru nový slide. Jako parametr předáváme řetězec s html nebo DOM objekt, který se má do slideru přidat jako slide. Dále můžeme předat také index, který značí na které místo se má slider přidat. Pokud jej nepředáme, tak se slide přidá na konec. Také můžeme přidat ještě jeden parametr, který je typu boolean a určuje jestli se má slide přidat před index. Pokud index nepředáme, tak tato hodnota bude značit že se má slide přidat na začátek.</p>
+                    <h3 class="heading-quaternary">slickRemove</h3>
+                    <p class="paragraph u-margin-bottom-small">Odstraní slide podle předaného indexu. Jako parametr předáváme index a můžeme také předat boolean hodnotu, která určuje jestli se má odstranit slide před indexem. Pokud index nepředáme, tak tato hodnota značí že se má odstranit první slide. Pokud nepředáme žádný parametr, tak se odstraní poslední slide.</p>
+                    <h3 class="heading-quaternary">slickFilter</h3>
+                    <p class="paragraph u-margin-bottom-small">Vyfiltruje slidery použitím JQuery filter funkce. Jako parametr předáváme selektor nebo funkci.</p>
+                    <h3 class="heading-quaternary">slickUnfilter</h3>
+                    <p class="paragraph u-margin-bottom-small">Odstraní aplikované filtrování. Jako parametr předáváme index.</p>
+                    <h3 class="heading-quaternary">slickGetOption</h3>
+                    <p class="paragraph u-margin-bottom-small">Vrátí hodnotu předaného nastavení. Jako parametr tedy předáváme název nastavení u kterého chceme získat hodnotu.</p>
+                    <h3 class="heading-quaternary">slickSetOption</h3>
+                    <p class="paragraph u-margin-bottom-small">Přenastaví předané nastavení. Jako parametr předáváme nastavení které chceme přenastavit, hodnotu kterou mu chceme nastavit a můžeme také předat boolean hodnotu, která určuje jestli se má refreshovat. Pokud se změna týká UI, tak bychom měli tuto hodnotu nastavit na true, tak je to napsáno na <a href="https://kenwheeler.github.io/slick/" target="_blank" class="anchor">oficiálních stránkách</a>.</p>
+                    <h3 class="heading-quaternary">unslick</h3>
+                    <p class="paragraph u-margin-bottom-small">Odstraní slider.</p>
+                    <h3 class="heading-quaternary">getSlick</h3>
+                    <p class="paragraph">Vrátí slick objekt.</p>
+                </main>
+                <div class="article__right-column">
+                    <div class="u-pos-sticky">
+                        <h3 class="heading-tertiary u-margin-bottom-medium">Části Tutoriálu</h3>
+                        <nav class="navigation">
+                            <ul>
+                                <li class="navigation__item"><a href="../co-je-to-slick-a-jeho-instalace/"><span class="navigation__item-number">1. </span> Co je to Slick a jeho instalace</a></li>
+                                <li class="navigation__item"><a href="../sipky-a-navigace/"><span class="navigation__item-number">2. </span> Šipky a navigace</a></li>
+                                <li class="navigation__item"><a href="../nastaveni-slidu/"><span class="navigation__item-number">3. </span> Nastavení slidů</a></li>
+                                <li class="navigation__item"><a href="../nastaveni-posouvani-slidu/"><span class="navigation__item-number">4. </span> Nastavení posouvání slidů</a></li>
+                                <li class="navigation__item"><a href="../par-dalsich-nastaveni/"><span class="navigation__item-number">5. </span> Pár dalších nastavení</a></li>
+                                <li class="navigation__item"><a href="../responzivita/"><span class="navigation__item-number">6. </span> Responzivita</a></li>
+                                <li class="navigation__item navigation__item--active"><a href="../eventy-a-metody/"><span class="navigation__item-number">7. </span> Eventy a metody</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            Copyright &copy; by Jiří Satora
+        </footer>
+    </div>
+
+    <script src="../media/js/libraries/jquery.min.js"></script>
+    <script src="../media/js/libraries/slick.min.js"></script>
+</body>
+</html>
