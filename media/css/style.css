@@ -91,7 +91,7 @@ body {
   clear: both !important;
 }
 .u-center-text {
-  text-align: center;
+  text-align: center !important;
 }
 .u-pos-sticky {
   position: sticky !important;
