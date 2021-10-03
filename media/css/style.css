@@ -90,6 +90,9 @@ body {
 .u-clear-float {
   clear: both !important;
 }
+.u-center-text {
+  text-align: center;
+}
 .u-pos-sticky {
   position: sticky !important;
   top: 2rem;
@@ -340,6 +343,24 @@ hr {
 }
 .code-box code {
   border-radius: 4px;
+}
+.button-primary:link,
+.button-primary:visited {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #44c0c2;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  transition: all 0.1s;
+}
+.button-primary:hover {
+  background-color: #3ab0b2;
+}
+.button-primary:active {
+  background-color: #349d9f;
 }
 .welcome-section {
   background-color: #44c0c2;
