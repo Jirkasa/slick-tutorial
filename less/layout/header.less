@@ -13,10 +13,11 @@
 
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     &__heading {
-        padding: 2rem 0;
+        // padding: 2rem 0;
 
         font-family: 'Lobster', cursive;
         font-size: 4.3rem;
@@ -68,4 +69,27 @@
             }
         }
     }
+
+    &--fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 30;
+
+        width: 100%;
+        height: 7rem;
+
+        border-bottom: 1px solid @colors[almost-white-2];
+        box-shadow: 0 .5rem 2rem rgba(@colors[black], .1);
+    }
+    &--fixed &__nav-item a {
+        &:link, &:visited {
+            line-height: 6.7rem;
+        }
+    }
+}
+
+.header-container {
+    height: 10rem;
+    background-color: @colors[white];
 }

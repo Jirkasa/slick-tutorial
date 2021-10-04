@@ -105,7 +105,7 @@ body {
 }
 .u-pos-sticky {
   position: sticky !important;
-  top: 2rem;
+  top: 10rem;
 }
 pre code.hljs {
   display: block;
@@ -238,9 +238,9 @@ code.hljs {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .header__heading {
-  padding: 2rem 0;
   font-family: 'Lobster', cursive;
   font-size: 4.3rem;
   color: #44c0c2;
@@ -275,6 +275,24 @@ code.hljs {
 .header__nav-item--active a:visited {
   background-color: #f8f9fb;
   border-color: #49cbcd;
+}
+.header--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 100%;
+  height: 7rem;
+  border-bottom: 1px solid #e9e9e9;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+.header--fixed .header__nav-item a:link,
+.header--fixed .header__nav-item a:visited {
+  line-height: 6.7rem;
+}
+.header-container {
+  height: 10rem;
+  background-color: #fff;
 }
 .footer {
   font-size: 1.4rem;
