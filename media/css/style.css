@@ -56,10 +56,17 @@ body {
   font-weight: 600;
   color: #484c55;
 }
+.heading-secondary--big {
+  font-size: 3.2rem;
+  font-weight: normal;
+}
 .heading-tertiary {
   font-size: 2.6rem;
   font-weight: normal;
   color: #484c55;
+}
+.heading-tertiary--smaller {
+  font-size: 2.2rem;
 }
 .heading-quaternary {
   font-size: 1.6rem;
@@ -86,6 +93,9 @@ body {
 }
 .u-margin-bottom-large {
   margin-bottom: 3rem !important;
+}
+.u-margin-bottom-huge {
+  margin-bottom: 4rem !important;
 }
 .u-clear-float {
   clear: both !important;
@@ -278,7 +288,7 @@ code.hljs {
   padding: 5.9rem 2rem;
   text-align: center;
   background-color: #44c0c2;
-  background-image: url('../../media/img/BackgroundImage.png');
+  background-image: linear-gradient(rgba(70, 130, 131, 0.7), rgba(70, 130, 131, 0.7)), url('../../media/img/BackgroundImage.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -362,12 +372,87 @@ hr {
 .button-primary:active {
   background-color: #349d9f;
 }
+.button-secondary:link,
+.button-secondary:visited {
+  display: inline-block;
+  font-size: 2.6rem;
+  font-weight: 600;
+  padding: 0.8rem 2.3rem;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.1s;
+}
+.button-secondary:hover {
+  color: #484c55;
+  background-color: #fff;
+}
+.icon-in-circle {
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+  border: 3px solid #44c0c2;
+  border-radius: 50%;
+  position: relative;
+}
+.icon-in-circle svg {
+  width: 40%;
+  height: 40%;
+  fill: #44c0c2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .welcome-section {
   background-color: #44c0c2;
-  height: 60rem;
-  background-image: url('../../media/img/BackgroundImage.png');
+  background-image: linear-gradient(rgba(70, 130, 131, 0.7), rgba(70, 130, 131, 0.7)), url('../../media/img/BackgroundImage.jpg');
   background-size: cover;
   background-position: center 20%;
+  background-position: center;
+  padding: 14rem 0 17rem;
+}
+.welcome-section__content {
+  width: 100%;
+  max-width: 118rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.welcome-section__heading {
+  font-size: 6.3rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+.welcome-section__text {
+  font-size: 2.3rem;
+  color: #fff;
+  width: 100%;
+  max-width: 35rem;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+.features-section {
+  background-color: #fff;
+  padding: 10rem 2rem;
+}
+.features-section__content {
+  width: 100%;
+  max-width: 118rem;
+  margin: 0 auto;
+}
+.features-section__content > p {
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.features-section__features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+  text-align: center;
 }
 .article {
   padding: 10rem 2rem;

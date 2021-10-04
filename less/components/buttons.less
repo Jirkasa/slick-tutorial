@@ -23,3 +23,26 @@
         background-color: darken(@colors[primary], 10%);
     }
 }
+
+.button-secondary {
+    &:link, &:visited {
+        display: inline-block;
+
+        font-size: 2.6rem;
+        font-weight: 600;
+
+        padding: .8rem 2.3rem;
+
+        color: @colors[white];
+        border: 3px solid @colors[white];
+        border-radius: 5px;
+        text-decoration: none;
+
+        transition: all .1s;
+    }
+
+    &:hover {
+        color: @colors[text];
+        background-color: @colors[white];
+    }
+}
