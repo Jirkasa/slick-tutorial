@@ -85,6 +85,10 @@ body {
   color: #44c0c2;
   text-decoration: none;
 }
+::selection {
+  background-color: #44c0c2;
+  color: #fff;
+}
 .u-margin-bottom-small {
   margin-bottom: 1rem !important;
 }
@@ -244,6 +248,7 @@ code.hljs {
   font-family: 'Lobster', cursive;
   font-size: 4.3rem;
   color: #44c0c2;
+  user-select: none;
 }
 .header__nav {
   height: 100%;
@@ -266,6 +271,7 @@ code.hljs {
   text-decoration: none;
   padding: 0 2rem;
   border-bottom: 0.3rem solid transparent;
+  user-select: none;
 }
 .header__nav-item a:hover {
   background-color: #f8f9fb;
@@ -347,6 +353,7 @@ hr {
   width: 100%;
   padding: 0.8rem 0;
   transition: all 0.1s, padding 0.3s;
+  user-select: none;
 }
 .navigation__item a:hover {
   padding: 0.8rem 1.2rem;
