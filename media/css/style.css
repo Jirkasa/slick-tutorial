@@ -139,6 +139,21 @@ pre code.hljs {
   overflow-x: auto;
   padding: 1em;
 }
+pre code.hljs::-webkit-scrollbar {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+pre code.hljs::-webkit-scrollbar-track {
+  background: #216465;
+}
+pre code.hljs::-webkit-scrollbar-thumb {
+  background: #3ab0b2;
+  border-radius: 1px;
+  border: 2px solid #6acdcf;
+}
+pre code.hljs::-webkit-scrollbar-thumb:hover {
+  background: #36a5a7;
+}
 code.hljs {
   padding: 0.3rem 0.5rem;
 }
@@ -390,7 +405,7 @@ code.hljs {
   padding: 2rem;
 }
 .heading-section {
-  padding: 5.9rem 2rem;
+  padding: 5.9rem 3rem;
   text-align: center;
   background-color: #44c0c2;
   background-image: linear-gradient(rgba(70, 130, 131, 0.7), rgba(70, 130, 131, 0.7)), url('../../media/img/BackgroundImage.jpg');
@@ -411,6 +426,13 @@ code.hljs {
 }
 .article-mark__text {
   font-size: 1.4rem;
+}
+.article-mark__icon {
+  width: 5rem;
+  height: 5rem;
+  fill: #fff;
+  padding-left: 0.3rem;
+  padding-top: 0.5rem;
 }
 hr {
   background-color: #e9e9e9;
@@ -603,6 +625,12 @@ hr {
   background-color: #fff;
   padding: 10rem 3rem;
 }
+@media (max-width: 37.5em) {
+  .features-section {
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+  }
+}
 .features-section__content {
   width: 100%;
   max-width: 118rem;
@@ -635,8 +663,13 @@ hr {
   max-width: 40rem;
 }
 .article {
-  padding: 10rem 2rem;
+  padding: 10rem 3rem;
   background-color: #fff;
+}
+@media (max-width: 41.875em) {
+  .article {
+    padding: 5rem 3rem;
+  }
 }
 .article__content {
   width: 100%;
@@ -644,8 +677,18 @@ hr {
   margin: 0 auto;
   display: flex;
 }
+@media (max-width: 41.875em) {
+  .article__content {
+    flex-direction: column-reverse;
+  }
+}
 .article__left-column {
   width: 10rem;
+}
+@media (max-width: 50em) {
+  .article__left-column {
+    display: none;
+  }
 }
 .article__middle-column {
   flex: 1;
@@ -655,6 +698,23 @@ hr {
 .article__right-column {
   padding-left: 7rem;
   width: 34rem;
+}
+@media (max-width: 45em) {
+  .article__right-column {
+    padding-left: 5rem;
+  }
+}
+@media (max-width: 41.875em) {
+  .article__right-column {
+    padding-left: 0;
+    width: auto;
+    padding-bottom: 4rem;
+  }
+}
+@media (max-width: 41.875em) {
+  .article__right-column--hide-on-direction-change {
+    display: none;
+  }
 }
 .part1-introduction-slider {
   width: 27rem;
@@ -666,6 +726,11 @@ hr {
   position: relative;
   margin-right: 2.8rem;
   margin-bottom: 2.8rem;
+}
+@media (max-width: 24.375em) {
+  .part1-introduction-slider {
+    width: 100%;
+  }
 }
 .part1-introduction-slider * {
   height: 100%;

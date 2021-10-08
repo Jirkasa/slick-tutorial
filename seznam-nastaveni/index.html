@@ -36,10 +36,11 @@
         <section class="article">
             <div class="article__content">
                 <div class="article__left-column">
-                    <!-- <div class="article-mark">
-                        <div class="article-mark__number">1.</div>
-                        <div class="article-mark__text">část</div>
-                    </div> -->
+                    <div class="article-mark">
+                        <svg class="article-mark__icon">
+                            <use xlink:href="../media/img/icon-sprite.svg#icon-file-text"></use>
+                        </svg>
+                    </div>
                 </div>
                 <main class="article__middle-column">
                     <h2 class="heading-secondary u-margin-bottom-small">Seznam nastavení</h2>
@@ -99,7 +100,7 @@
                     <p class="paragraph"><a href="#" class="anchor">slide</a></p>
                     <p class="paragraph"><a href="#" class="anchor">customPaging</a></p>
                 </main>
-                <div class="article__right-column">
+                <div class="article__right-column article__right-column--hide-on-direction-change">
                     <div class="u-pos-sticky">
                         <h3 class="heading-tertiary u-margin-bottom-medium">Části Tutoriálu</h3>
                         <nav class="navigation">
