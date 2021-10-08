@@ -7,6 +7,10 @@
 
     position: relative;
 
+    @media print {
+        display: none;
+    }
+
     &__content {
         height: 100%;
         width: 100%;
@@ -19,8 +23,6 @@
     }
 
     &__heading {
-        // padding: 2rem 0;
-
         font-family: 'Lobster', cursive;
         font-size: 4.3rem;
 
@@ -133,4 +135,8 @@
 .header-container {
     height: 10rem;
     background-color: @colors[white];
+
+    @media print {
+        display: none;
+    }
 }

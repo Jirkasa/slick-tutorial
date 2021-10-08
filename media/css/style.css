@@ -141,6 +141,11 @@ body {
   position: sticky !important;
   top: 10rem;
 }
+@media print {
+  .u-no-print {
+    display: none !important;
+  }
+}
 pre code.hljs {
   display: block;
   overflow-x: auto;
@@ -298,11 +303,21 @@ code.hljs {
     margin: 5rem auto;
   }
 }
+@media print {
+  .page {
+    box-shadow: none;
+  }
+}
 .header {
   background-color: #fff;
   height: 10rem;
   padding: 0 2rem;
   position: relative;
+}
+@media print {
+  .header {
+    display: none;
+  }
 }
 .header__content {
   height: 100%;
@@ -404,6 +419,11 @@ code.hljs {
   height: 10rem;
   background-color: #fff;
 }
+@media print {
+  .header-container {
+    display: none;
+  }
+}
 .footer {
   font-size: 1.4rem;
   color: #484c55;
@@ -412,6 +432,11 @@ code.hljs {
   text-align: center;
   padding: 2rem;
 }
+@media print {
+  .footer {
+    display: none;
+  }
+}
 .heading-section {
   padding: 5.9rem 3rem;
   text-align: center;
@@ -419,6 +444,11 @@ code.hljs {
   background-image: linear-gradient(rgba(70, 130, 131, 0.7), rgba(70, 130, 131, 0.7)), url('../../media/img/BackgroundImage.jpg');
   background-size: cover;
   background-position: center;
+}
+@media print {
+  .heading-section {
+    display: none;
+  }
 }
 .article-mark {
   width: 7rem;
@@ -446,6 +476,7 @@ hr {
   background-color: #e9e9e9;
   border: none;
   height: 1px;
+  -webkit-print-color-adjust: exact;
 }
 .navigation ul {
   list-style: none;
@@ -486,6 +517,11 @@ hr {
 .code-box {
   font-size: 1.4rem;
   line-height: 1.2;
+}
+@media print {
+  .code-box {
+    border: 2px solid #484c55;
+  }
 }
 .code-box code {
   border-radius: 4px;
@@ -608,6 +644,11 @@ hr {
   background-position: center;
   padding: 14rem 0 17rem;
 }
+@media print {
+  .welcome-section {
+    padding-bottom: 7rem;
+  }
+}
 .welcome-section__content {
   width: 100%;
   max-width: 118rem;
@@ -679,6 +720,11 @@ hr {
     padding: 5rem 3rem;
   }
 }
+@media print {
+  .article {
+    padding: 0;
+  }
+}
 .article__content {
   width: 100%;
   max-width: 118rem;
@@ -717,6 +763,11 @@ hr {
     padding-left: 0;
     width: auto;
     padding-bottom: 4rem;
+  }
+}
+@media print {
+  .article__right-column {
+    display: none;
   }
 }
 @media (max-width: 41.875em) {
@@ -919,6 +970,7 @@ hr {
   border-radius: 0.2rem;
   position: absolute;
   transition: transform 0.2s;
+  -webkit-print-color-adjust: exact;
 }
 .part5-asNavFor-example__arrow--left {
   margin-right: 0.5rem;

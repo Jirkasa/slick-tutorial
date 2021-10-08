@@ -1,6 +1,4 @@
 .heading-section {
-    // height: 17.5rem;
-
     padding: 5.9rem 3rem;
     text-align: center;
 
@@ -9,4 +7,8 @@
     background-image: linear-gradient(rgba(@colors[primary-3], .7), rgba(@colors[primary-3], .7)), url('../../media/img/BackgroundImage.jpg');
     background-size: cover;
     background-position: center;
+
+    @media print {
+        display: none;
+    }
 }

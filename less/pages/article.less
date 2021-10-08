@@ -7,6 +7,10 @@
         padding: 5rem 3rem;
     }
 
+    @media print {
+        padding: 0;
+    }
+
     &__content {
         width: 100%;
         max-width: @grid-width;
@@ -44,6 +48,10 @@
             padding-left: 0;
             width: auto;
             padding-bottom: 4rem;
+        }
+
+        @media print {
+            display: none;
         }
 
         &--hide-on-direction-change {
