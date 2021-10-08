@@ -2,7 +2,6 @@
   "name": "slick-tutorial",
   "version": "1.0.0",
   "description": "Website about slick library",
-  "main": "index.js",
   "scripts": {
     "compile:less": "lessc ./less/main.less ./media/css/style.css",
     "nodemon:compile:less": "nodemon -e less -x \"npm run compile:less\"",
@@ -20,12 +19,13 @@
   },
   "homepage": "https://github.com/Jirkasa/slick-tutorial#readme",
   "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
     "autoprefixer": "^10.3.1",
     "concat": "^1.0.3",
     "less": "^4.1.1",
     "nodemon": "^2.0.13",
+    "parcel": "^2.0.0-rc.0",
     "postcss": "8.3.6",
-    "postcss-cli": "8.3.1",
-    "parcel": "^2.0.0-rc.0"
+    "postcss-cli": "8.3.1"
   }
 }

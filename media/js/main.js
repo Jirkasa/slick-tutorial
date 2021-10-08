@@ -1,6 +1,2 @@
-import createStickyHeader from './modules/stickyHeader.js';
-
-const headerContainer = document.querySelector('.header-container');
-const header = document.querySelector('header');
-
-createStickyHeader(headerContainer, header, 'header--fixed');
+!function(e,r,n){if(!e)throw new Error("no header container element was passed");if(!r)throw new Error("no header element was passed");if(!n)throw new Error("no sticky CSS class for header was passed");new IntersectionObserver((function([e]){e.isIntersecting?r.classList.remove(n):r.classList.add(n)}),{root:null,threshold:0}).observe(e)}(document.querySelector(".header-container"),document.querySelector("header"),"header--fixed");
+//# sourceMappingURL=main.js.map
