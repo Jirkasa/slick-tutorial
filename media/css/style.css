@@ -108,6 +108,13 @@ body {
   color: #44c0c2;
   text-decoration: none;
 }
+.anchor:hover {
+  color: #349d9f;
+}
+.id-heading-anchor {
+  position: relative;
+  bottom: 7rem;
+}
 ::selection {
   background-color: #44c0c2;
   color: #fff;

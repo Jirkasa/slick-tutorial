@@ -45,17 +45,17 @@
                     <h2 class="heading-secondary u-margin-bottom-small">Šipky a navigace</h2>
                     <hr class="u-margin-bottom-medium">
                     <p class="paragraph u-margin-bottom-medium">V této části si ukážeme všechna nastavení, která se týkají šipek a navigace slideru. Také si ukážeme jak můžeme šipky a navigaci nastylovat.</p>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Zobrazení/Skrytí šipek</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="arrows" class="id-heading-anchor"></span>Zobrazení/Skrytí šipek</h3>
                     <p class="paragraph u-margin-bottom-medium">Slick slidery mají defaultně zapnuté šipky, které se zobrazí aby pomocí nich mohl uživatel posouvat elementy v slideru. Pokud šipky zobrazovat nechceme, tak můžeme nastavit nastavení arrows na hodnotu false, jak ukazuje následující ukázka. Nastavení slideru píšeme jako vlastnosti objektu, který předáváme slick metodě jako parametr.</p>
                     <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     arrows: false // šipky pro ovládání slideru se nezobrazí
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Změnění elementu do kterého se umístí šipky</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="append-arrows" class="id-heading-anchor"></span>Změnění elementu do kterého se umístí šipky</h3>
                     <p class="paragraph u-margin-bottom-medium">Defaultně se šipky slideru umístí do samotného elementu (slideru), který obsahuje slidy. Pokud chceme změnit kde se šipky zobrazí, můžeme k tomu použít nastavení appendArrows.</p>
 <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     appendArrows: '.gallery' // šipky se umístí do elementu s třídou gallery
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Určení elementu, který představuje šipku</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="prev-arrow" class="id-heading-anchor"></span><span id="next-arrow" class="id-heading-anchor"></span>Určení elementu, který představuje šipku</h3>
                     <p class="paragraph u-margin-bottom-medium">Pokud chceme, tak nemusíme nechat slick vytvořit pro slider šipky. Pokud chceme můžeme si je vytvořit sami a potom jen nastavit, že je má Slick použít jako šipky. Pro nastavení elementu jako šipku zpět použijeme nastavení prevArrow. Pro nastavení elementu jako šipku dopředu použijeme nastavení nextArrow.</p>
                     <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     prevArrow: '#sipka-zpet', // šipkou zpět bude element s id sipka-zpet
@@ -108,17 +108,17 @@
     transform: translateY(.3rem) rotate(38deg);
 }</code></pre>
                     <div class="part2-arrow u-margin-bottom-medium"></div>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Zobrazení/Skrytí navigace</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="dots" class="id-heading-anchor"></span>Zobrazení/Skrytí navigace</h3>
                     <p class="paragraph u-margin-bottom-medium">U slideru si můžeme nechat zobrazit také navigaci, pomocí které se bude uživatel moci přepínat na konkrétní slide, který si vybere. Zobrazíme ji nastavením vlastnosti dots na hodnotu true.</p>
 <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     dots: true // zobrazení navigace
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Změnění elementu do kterého se umístí navigace</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="append-dots" class="id-heading-anchor"></span>Změnění elementu do kterého se umístí navigace</h3>
                     <p class="paragraph u-margin-bottom-medium">Stejně jako u šipek, i u navigace si můžeme určit do kterého elementu se navigace slideru umístí. Použijeme k tomu nastavení appendDots.</p>
 <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     appendDots: '.gallery' // navigace se umístí do elementu s třídou gallery
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Změnění jména třídy pro navigaci slideru</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="dots-class" class="id-heading-anchor"></span>Změnění jména třídy pro navigaci slideru</h3>
                     <p class="paragraph u-margin-bottom-medium">Slick defaultně navigaci slideru nastavuje jako třídu "slider-dots". Pokud bychom chtěli navigaci nastavit jinou třídu, tak k tomu použijeme nastavení dotsClass. Hodí se to když na stránce máme třeba více sliderů, ale u každého slideru chceme navigaci nastylovat trochu jinak.</p>
 <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     dotsClass: 'moje-navigace' // navigaci se přiřadí třída moje-navigace

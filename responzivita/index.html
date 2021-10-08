@@ -45,7 +45,7 @@
                     <h2 class="heading-secondary u-margin-bottom-small">Responzivita</h2>
                     <hr class="u-margin-bottom-medium">
                     <p class="paragraph u-margin-bottom-medium">U Slick sliderů můžeme jednoduše provádět také responzivitu. V této části se dozvíte jak.</p>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Měnění nastavení slideru pro různé šířky obrazovky</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="responsive" class="id-heading-anchor"></span>Měnění nastavení slideru pro různé šířky obrazovky</h3>
                     <p class="paragraph u-margin-bottom-medium">Pokud chceme měnit nastavení slideru v závislosti na šířce obrazovky, tak můžeme využít nastavení responsive. Tomuto nastavení předáváme pole objektů. Každý objekt v poli obsahuje šířku a nastavení, která se mají aplikovat. Defaultně Slick pro responzivitu používá desktop-first strategii, takže se vždy aplikuje nejmenší možná šířka, která je větší nebo se rovná šířce obrazovky. Pokud bychom chtěli aby Slick používal mobile-first strategii, tak bychom to museli přepnout pomocí nastavení mobileFirst.</p>
                     <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     infinite: false,
@@ -78,7 +78,7 @@
         }
     ]
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Přepnutí na mobile-first strategii</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="mobile-first" class="id-heading-anchor"></span>Přepnutí na mobile-first strategii</h3>
                     <p class="paragraph u-margin-bottom-medium">Slick defaultně používá pro responzivitu desktop-first strategii, takže se vždy aplikuje nejmenší možná šířka, která je větší nebo se rovná šířce obrazovky. Pokud ale chceme použít mobile-first strategii, tak musíme nastavit nastavení mobileFirst na hodnotu true. Potom se tedy vždy aplikuje největší možná šířka, která je menší nebo se rovná šířce obrazovky.</p>
                     <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     infinite: false,
@@ -112,7 +112,7 @@
         }
     ]
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Změnění podle čeho bude Slick brát šířku pro responzivitu</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="respond-to" class="id-heading-anchor"></span>Změnění podle čeho bude Slick brát šířku pro responzivitu</h3>
                     <p class="paragraph u-margin-bottom-medium">Defaultně Slick bere šířku kterou používá pro určení, která nastavení se aplikují podle šířky obrazovky, nebo přesněji podle šířky okna. Pokud ale chceme, tak můžeme specifikovat, že se šířka bude brát podle šířky slideru namísto šířky okna. Slouží k tomu nastavení respondTo. Tomuto nastavení nastavujeme jednu z těchto tří hodnot: 'window' - okno, 'slider' nebo 'min' - menší z předešlích dvou.</p>
                     <pre class="code-box u-margin-bottom-large"><code>$('.muj-slider').slick({
     infinite: false,

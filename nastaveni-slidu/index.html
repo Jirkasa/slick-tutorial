@@ -45,7 +45,7 @@
                     <h2 class="heading-secondary u-margin-bottom-small">Nastavení slidů</h2>
                     <hr class="u-margin-bottom-medium">
                     <p class="paragraph u-margin-bottom-medium">V této části si ukážeme nastavení týkající se slidů, tedy elementů uvnitř slideru.</p>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Nastavení startovního slidu</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="initial-slide" class="id-heading-anchor"></span>Nastavení startovního slidu</h3>
                     <p class="paragraph u-margin-bottom-medium">Defaultně se jako první slide v slideru zobrazí element, který napíšeme do elementu představující slider jako první. Pokud bychom chtěli začít jiným slidem, tak to můžeme nastavit pomocí nastavení initialSlide. Tomuto nastavení předáváme číslo, které určuje který slide se zobrazí. Začíná se od nuly, takže pokud chceme jako startovní slide nastavit například druhý element, tak nastavíme toto nastavení na hodnotu 1.</p>
                     <pre class="code-box u-margin-bottom-medium"><code>&lt;div class="muj-slider"&gt;
     &lt;img src="./img/Image1.jpg"&gt;
@@ -59,35 +59,35 @@
         initialSlide: 1 // jako startovní slide se nastaví druhý element
     });
 &lt;/script&gt;</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Změna počtu slidů, které se najednou zobrazí</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="slides-to-show" class="id-heading-anchor"></span>Změna počtu slidů, které se najednou zobrazí</h3>
                     <p class="paragraph u-margin-bottom-medium">Defaultně se ve slideru najednou zobrazí jen jeden slide, který se roztáhne přes celou šířku slideru. Pokud ale chceme najednou zobrazit více sliderů, tak můžeme přenastavit nastavení slidesToShow.</p>
                     <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     slidesToShow: 3 // najednou se ve slideru zobrazí 3 slidy
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Ponechání šířky slidů</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="variable-width" class="id-heading-anchor"></span>Ponechání šířky slidů</h3>
                     <p class="paragraph u-margin-bottom-medium">Defaultně Slick změní šířku elementů uvnitř slideru tak, aby se zaplnil prostor slideru podle nastavení slidesToShow. Pokud to ale chceme zakázat a šířku slidů neměnit, tak můžeme nastavit nastavení variableWidth na hodnotu true.</p>
                     <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     variableWidth: true // elementy uvnitř slideru si ponechají vlastní šířku
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Vycentrování aktivního slidu</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="center-mode" class="id-heading-anchor"></span>Vycentrování aktivního slidu</h3>
                     <p class="paragraph u-margin-bottom-medium">Pokud v slideru máme nastaveno že se zároveň zobrazuje více slidů, tak se aktivní slide bude zobrazovat v levé části slideru. Pokud bychom jej chtěli zobrazit uprostřed, tak můžeme změnit nastavení centerMode na hodnotu true. Po tomto nastavení můžeme po krajích slideru vidět části dalších slidů, to můžeme změnit pomocí vlastnosti centerPadding. Tuto vlastnost nastavujeme na true jen při liché hodnotě v nastavení slidesToShow.</p>
                     <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     slidesToShow: 3,
     centerMode: true // aktivní slide se zobrazí uprostřed slideru
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Změnění mezer po stranách slideru při center módu</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="center-padding" class="id-heading-anchor"></span>Změnění mezer po stranách slideru při center módu</h3>
                     <p class="paragraph u-margin-bottom-medium">Při nastavení vlastnosti centerMode na hodnotu true nám můžou po stranách slideru vzniknout mezery. Jejich velikost se dá změnit pomocí nastavení centerPadding. Tomuto nastavení nastavujeme jako hodnotu řetězec s hodnotou a pixely nebo procenty.</p>
                     <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     slidesToShow: 3,
     centerMode: true,
     centerPadding: '10px' // po stranách slideru budou mezery o velikosti 10 pixelů
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Lazy loading obrázků ve slideru</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="lazy-load" class="id-heading-anchor"></span>Lazy loading obrázků ve slideru</h3>
                     <p class="paragraph u-margin-bottom-medium">Pokud chceme, tak můžeme slideru nastavit že pokud obsahuje obrázky, načtou se až poté co se ve slideru objeví. Takže uživatel nemusí stahovat všechny obrázky, když se na ně třeba ve slideru ani nechce podívat. Tuto funkci zapneme nastavením vlastnosti lazyLoad na hodnotu true.</p>
                     <pre class="code-box u-margin-bottom-medium"><code>$('.muj-slider').slick({
     lazyLoad: true // obrázky se stáhnou až se ve slideru objeví
 });</code></pre>
-                    <h3 class="heading-tertiary u-margin-bottom-small">Změna CSS vlastnosti z-index všech slidů v slideru</h3>
+                    <h3 class="heading-tertiary u-margin-bottom-small"><span id="z-index" class="id-heading-anchor"></span>Změna CSS vlastnosti z-index všech slidů v slideru</h3>
                     <p class="paragraph u-margin-bottom-medium">Elementy uvnitř slideru mají defaultně nastavenou CSS vlastnost z-index na hodnotu 1000. Pokud ji chceme změnit na jinou hodnotu, uděláme to pomocí nastavení zIndex.</p>
                     <pre class="code-box u-margin-bottom-large"><code>$('.muj-slider').slick({
     zIndex: 5 // změná CSS vlastnosti z-index všech slidů ve slideru

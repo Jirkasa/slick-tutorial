@@ -58,6 +58,15 @@ body {
         color: @colors[primary];
         text-decoration: none;
     }
+
+    &:hover {
+        color: darken(@colors[primary], 10%);
+    }
+}
+
+.id-heading-anchor {
+    position: relative;
+    bottom: 7rem;
 }
 
 ::selection {
