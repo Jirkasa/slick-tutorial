@@ -7,7 +7,7 @@
     "compile:less": "lessc ./less/main.less ./media/css/style.css",
     "nodemon:compile:less": "nodemon -e less -x \"npm run compile:less\"",
     "concat:css": "concat -o media/css/style.concat.css media/css/icofont.min.css media/css/style.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' media/css/style.concat.css -o media/css/style.prefix.css"
+    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' media/css/style.css -o media/css/style.prefix.css"
   },
   "repository": {
     "type": "git",
@@ -20,11 +20,12 @@
   },
   "homepage": "https://github.com/Jirkasa/slick-tutorial#readme",
   "devDependencies": {
-    "autoprefixer": "^10.3.6",
+    "autoprefixer": "^10.3.1",
     "concat": "^1.0.3",
     "less": "^4.1.1",
     "nodemon": "^2.0.13",
-    "postcss": "^8.3.8",
-    "postcss-cli": "^9.0.1"
+    "postcss": "8.3.6",
+    "postcss-cli": "8.3.1",
+    "parcel": "^2.0.0-rc.0"
   }
 }

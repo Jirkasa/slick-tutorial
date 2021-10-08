@@ -1,6 +1,6 @@
-import createStickHeader from './modules/stickyHeader.js';
+import createStickyHeader from './modules/stickyHeader.js';
 
 const headerContainer = document.querySelector('.header-container');
 const header = document.querySelector('header');
 
-createStickHeader(headerContainer, header, 'header--fixed');
+createStickyHeader(headerContainer, header, 'header--fixed');
