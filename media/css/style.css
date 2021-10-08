@@ -365,6 +365,7 @@ code.hljs {
   padding: 0 2rem;
   border-bottom: 0.3rem solid transparent;
   user-select: none;
+  transition: all 0.2s;
 }
 .header__nav-item a:hover {
   background-color: #f8f9fb;
