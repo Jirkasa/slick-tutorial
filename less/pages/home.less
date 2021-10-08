@@ -13,6 +13,8 @@
         max-width: @grid-width;
         margin: 0 auto;
 
+        padding: 0 3rem;
+
         text-align: center;
     }
 
@@ -41,7 +43,7 @@
 .features-section {
     background-color: @colors[white];
 
-    padding: 10rem 2rem;
+    padding: 10rem 3rem;
 
     &__content {
         width: 100%;
@@ -63,5 +65,17 @@
         gap: 4rem;
 
         text-align: center;
+
+        @media (max-width: #pxToEm(958)[]) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: #pxToEm(465)[]) {
+            grid-template-columns: 1fr;
+        }
+
+        p {
+            margin: 0 auto;
+            max-width: 40rem;
+        }
     }
 }
